@@ -1,0 +1,27 @@
+{
+  "name": "song-randomizer",
+  "version": "1.0.0",
+  "description": "A tool to randomly generate a song format using basic music theory",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "test"
+  },
+  "keywords": [
+    "song",
+    "randomizer",
+    "music",
+    "theory"
+  ],
+  "author": "Adam Beck",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "mocha": "9.1.1",
+    "nyc": "^15.1.0",
+    "testdouble": "^3.16.2"
+  }
+}
