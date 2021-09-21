@@ -101,3 +101,29 @@ curl --location --request POST 'http://localhost:3000/generate' \
 	"tempo": 145
 }
 ```
+
+#### DEFAULTS
+-If nothing is set, these are the following default settings:
+```json
+{
+    "tempoLowerBound": 1,
+    "tempoHigherBound": 999,
+    "minAmountOfParts": 1,
+    "maxAmountOfParts": 26,
+    "partRepeatLowerBound": 1,
+    "partRepeatHigherBound": 10,
+    "amountOfDynamicsLower": 1,
+    "amountOfDynamicsHigher": dynamics.length,
+    "amountOfInstrumentsLower": 1,
+    "amountOfInstrumentsHigher": 999,
+    "popularStructure": true,
+    "preferredKeys": ["A","A#","B","C","C#","D","D#","E","F","F#","G","G#"]
+}
+```
+## To Do:
+- Make song structure start with `A` and each new part be named appropriately i.e. `AABACBAD` instead of `BBABDABD`
+- Produce the notes of the scale
+- Produce the chords typically used with the scale
+- Add more dynamics
+- find some way to programatically know when to use sharps or flats (currently all sharps)
+- Compose an actual song using the template
