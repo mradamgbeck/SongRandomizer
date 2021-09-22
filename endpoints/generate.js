@@ -10,7 +10,7 @@ const {
     pickOne,
     pickSome,
 } = require('../lib/randomFunctions');
-const {randomizeSongStructure, getScaleForKey} = require('../lib/musicFunctions')
+const {randomizeSongStructure, getScaleForKey, getChordsForScale} = require('../lib/musicFunctions')
 
 function generateSong(inputs) {
 
@@ -54,11 +54,14 @@ function generateSong(inputs) {
         inputs.amountOfInstrumentsHigher || defaults.amountOfInstrumentsHigher
     );
 
+    const chords = getChordsForScale(scale.notes);
+
     const result = {
         tempo: tempo,
         signature: signature,
         key: key,
         scale: scale,
+        chords: chords,
         numberOfInstruments: numberOfInstruments,
         dynamics: selectedDynamics,
         structure: songStructure

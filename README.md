@@ -80,41 +80,73 @@ curl --location --request POST 'http://localhost:3000/generate' \
 #### OUTPUT
 ```json
 {
-  "key": "F",
-  "dynamics": [
-    "FADE OUT",
-    "BREAK DOWN",
-    "BUILD UP",
-    "DANCE BEAT",
-    "DECEPTIVE CADENCE",
-    "POLY METER"
-  ],
-  "numberOfInstruments": 4,
-  "numberOfParts": 4,
+  "tempo": 95,
+  "signature": "7/4",
+  "key": "C#",
   "scale": {
-    "name": "MINOR BLUES",
+    "name": "HUNGARIAN MINOR",
     "notes": [
-      "F",
-      "G#",
-      "A#",
-      "B",
-      "C",
+      "C#",
       "D#",
-      "F"
+      "E",
+      "G",
+      "G#",
+      "A",
+      "C"
     ]
   },
-  "signature": "7/4",
+  "chords": {
+    "i": [
+      "C#",
+      "E",
+      "G#"
+    ],
+    "ii": [
+      "D#",
+      "G",
+      "A"
+    ],
+    "iii": [
+      "E",
+      "G#",
+      "C"
+    ],
+    "iv": [
+      "G",
+      "A",
+      "C#"
+    ],
+    "v": [
+      "G#",
+      "C",
+      "D#"
+    ],
+    "vi": [
+      "A",
+      "C#",
+      "E"
+    ],
+    "vii": [
+      "C",
+      "D#",
+      "G"
+    ]
+  },
+  "numberOfInstruments": 6,
+  "dynamics": [
+    "BUILD UP",
+    "ARPEGGIO",
+    "POLY RHYTHM",
+    "FADE OUT",
+    "POLY METER",
+    "BASS DROP"
+  ],
   "structure": [
     "B",
-    "D",
     "A",
-    "C",
-    "B",
-    "D",
     "A",
-    "C"
-  ],
-  "tempo": 98
+    "A"
+  ]
 }
 ```
 
