@@ -170,8 +170,7 @@ curl --location --request POST 'http://localhost:3000/generate' \
 ```
 ## To Do:
 - Make song structure start with `A` and each new part be named appropriately i.e. `AABACBAD` instead of `BBABDABD`
-- Produce the notes of the scale
-- Produce the chords typically used with the scale
+- Add ability to prefer a list of scales and time signatures
 - Add more dynamics
 - find some way to programatically know when to use sharps or flats (currently all sharps)
 - Compose an actual song using the template

@@ -68,9 +68,9 @@ function generateSong(inputs) {
     }
 
     console.log('INPUT --------------------------------------------');
-    console.table(inputs);
+    console.log(inputs);
     console.log('OUTPUT -------------------------------------------');
-    console.table(result);
+    console.log(result);
     return result;
 }
 
