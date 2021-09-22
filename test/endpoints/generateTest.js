@@ -7,7 +7,7 @@ const defaults = require('../../config/generateDefaults.js')
 const {countOccurrences} = require('../../lib/randomFunctions');
 let output;
 
-describe('generate function', () => {
+describe('generate function:', () => {
 
     describe('with inputs', () => {
         let input = {
