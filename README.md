@@ -25,7 +25,7 @@ SongRandomizer is a node express app that starts on port 3000
   - The minimum amount of suggested voices
 - `amountOfInstrumentsHigher`
   - The maximum amount of suggested voices
-- `popularStructure`
+- `usePopularStructure`
   - Whether or not the generator chooses the structure from a list of popular song structures
 - `preferredKeys`
   - A list of the keys for the generator to limit itself to
@@ -43,7 +43,7 @@ SongRandomizer is a node express app that starts on port 3000
 	"amountOfDynamicsHigher": 6,
 	"amountOfInstrumentsLower": 1,
 	"amountOfInstrumentsHigher": 6,
-	"popularStructure": false,
+	"usePopularStructure": false,
 	"preferredKeys": [
 		"A",
 		"C",
@@ -67,7 +67,7 @@ curl --location --request POST 'http://localhost:3000/generate' \
 	"amountOfDynamicsHigher": 6,
 	"amountOfInstrumentsLower": 1,
 	"amountOfInstrumentsHigher": 6,
-	"popularStructure": false,
+	"usePopularStructure": false,
 	"preferredKeys": [
 		"A",
 		"C",
@@ -116,7 +116,7 @@ curl --location --request POST 'http://localhost:3000/generate' \
     "amountOfDynamicsHigher": dynamics.length,
     "amountOfInstrumentsLower": 1,
     "amountOfInstrumentsHigher": 999,
-    "popularStructure": true,
+    "usePopularStructure": true,
     "preferredKeys": ["A","A#","B","C","C#","D","D#","E","F","F#","G","G#"]
 }
 ```

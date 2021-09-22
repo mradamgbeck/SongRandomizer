@@ -20,7 +20,7 @@ describe('generate function', () => {
             "amountOfDynamicsHigher": 6,
             "amountOfInstrumentsLower": 1,
             "amountOfInstrumentsHigher": 6,
-            "popularStructure": false,
+            "usePopularStructure": false,
             "preferredKeys": [
                 "A",
                 "C",
@@ -95,7 +95,7 @@ describe('generate function', () => {
         });
 
         it('should pick a popular song structure', () => {
-            expect(output.structure).to.be.oneOf(constants.structures)
+            expect(constants.structures).to.include(output.structure)
         });
     });
 });

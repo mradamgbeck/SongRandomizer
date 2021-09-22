@@ -10,6 +10,6 @@ module.exports = {
     amountOfDynamicsHigher: process.env['SR_DYNAMICS_HIGHER'] || constants.dynamics.length,
     amountOfInstrumentsLower: process.env['SR_INSTRUMENTS_LOWER'] || 1,
     amountOfInstrumentsHigher: process.env['SR_INSTRUMENTS_HIGHER'] || 999,
-    popularStructure: process.env['SR_USE_POP_STRUCTURE'] === 'true',
+    usePopularStructure: process.env['SR_USE_POP_STRUCTURE'] === 'true',
     preferredKeys: process.env['SR_PREFERRED_KEYS'] || constants.notes
 }

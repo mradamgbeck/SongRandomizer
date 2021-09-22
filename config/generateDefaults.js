@@ -11,6 +11,6 @@ module.exports = {
     "amountOfDynamicsHigher": constants.dynamics.length,
     "amountOfInstrumentsLower": 1,
     "amountOfInstrumentsHigher": 999,
-    "popularStructure": true,
+    "usePopularStructure": true,
     "preferredKeys": []
 }
