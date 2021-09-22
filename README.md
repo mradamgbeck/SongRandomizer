@@ -80,25 +80,41 @@ curl --location --request POST 'http://localhost:3000/generate' \
 #### OUTPUT
 ```json
 {
-	"key": "F#",
-	"dynamics": [
-		"BUILD UP",
-		"ARPEGGIO",
-		"BASS DROP",
-		"DANCE BEAT",
-		"DECEPTIVE CADENCE"
-	],
-	"numberOfInstruments": 3,
-	"numberOfParts": 3,
-	"scale": "EGYPTIAN",
-	"signature": "6/8",
-	"structure": [
-		"A",
-		"B",
-		"C",
-		"B"
-	],
-	"tempo": 145
+  "key": "F",
+  "dynamics": [
+    "FADE OUT",
+    "BREAK DOWN",
+    "BUILD UP",
+    "DANCE BEAT",
+    "DECEPTIVE CADENCE",
+    "POLY METER"
+  ],
+  "numberOfInstruments": 4,
+  "numberOfParts": 4,
+  "scale": {
+    "name": "MINOR BLUES",
+    "notes": [
+      "F",
+      "G#",
+      "A#",
+      "B",
+      "C",
+      "D#",
+      "F"
+    ]
+  },
+  "signature": "7/4",
+  "structure": [
+    "B",
+    "D",
+    "A",
+    "C",
+    "B",
+    "D",
+    "A",
+    "C"
+  ],
+  "tempo": 98
 }
 ```
 
