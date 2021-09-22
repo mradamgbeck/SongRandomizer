@@ -55,14 +55,13 @@ function generateSong(inputs) {
     );
 
     const result = {
-        key: key,
-        dynamics: selectedDynamics,
-        numberOfInstruments: numberOfInstruments,
-        numberOfParts: numberOfParts,
-        scale: scale,
+        tempo: tempo,
         signature: signature,
-        structure: songStructure,
-        tempo: tempo
+        key: key,
+        scale: scale,
+        numberOfInstruments: numberOfInstruments,
+        dynamics: selectedDynamics,
+        structure: songStructure
     }
 
     console.log('INPUT --------------------------------------------');
