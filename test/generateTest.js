@@ -48,6 +48,10 @@ describe('generate function', () => {
             expect(output.key).to.be.oneOf(input.preferredKeys);
         });
 
+        it('should return a scale', ()=>{
+            expect(output.scale.notes.length).to.be.greaterThan(4)
+        })
+
         it('should return a time signature from the list', () => {
             expect(output.signature).to.be.oneOf(signatures);
         });
