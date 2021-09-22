@@ -1,6 +1,6 @@
 const expect = require('chai').expect;
-const {getScaleForKey, randomizeSongStructure} = require('../../lib/musicFunctions');
-const {countOccurrences} = require('../../lib/randomFunctions');
+const {getScaleForKey, randomizeSongStructure, getChordsForScale} = require('../../lib/musicFunctions');
+const {countOccurrences, getIndexWithWrap} = require('../../lib/randomFunctions');
 
 describe('music functions:', () => {
     describe('get scale for key', () => {
@@ -37,4 +37,25 @@ describe('music functions:', () => {
                 .and.lessThanOrEqual(maxRepeats)
         });
     });
+
+    describe('get chords for scale', () => {
+        it('should return a proper triad for each note', () => {
+            let scale = ['C', 'D', 'E', 'F', 'G', 'A', 'B'];
+            let chords = getChordsForScale(scale);
+            expect(chords.length).to.be.equal(scale.length)
+            for (let chord of chords) {
+                let triad = chord.triad;
+                for (let i = 0; i < triad.length; i++) {
+                    let thisNote = triad[i];
+                    expect(scale).to.include(thisNote);
+                    if (i < triad.length - 1) {
+                        let nextNote = triad[i + 1];
+                        let expectedNextNote = scale[scale.indexOf(
+                            getIndexWithWrap(scale, scale.indexOf(thisNote), 2))];
+                        expect(nextNote).to.be.equal(expectedNextNote)
+                    }
+                }
+            }
+        })
+    })
 });
