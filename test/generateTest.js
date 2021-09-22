@@ -1,5 +1,4 @@
 const expect = require('chai').expect;
-const td = require('testdouble');
 const {generateSong} = require("../endpoints/generate");
 const constants = require('../lib/constants.json');
 const defaults = require('../config/generateDefaults.js')
@@ -71,21 +70,21 @@ describe('generate function', () => {
             output = generateSong({});
         })
 
-        it('should return a number of instruments within the bounds', () => {
+        it('should return a number of instruments within the defaults', () => {
             expect(output.numberOfInstruments).to.be.greaterThanOrEqual(defaults.amountOfInstrumentsLower);
             expect(output.numberOfInstruments).to.be.lessThanOrEqual(defaults.amountOfInstrumentsHigher);
         });
 
-        it('should return a tempo within the bounds', () => {
+        it('should return a tempo within the defaults', () => {
             expect(output.tempo).to.be.greaterThanOrEqual(defaults.tempoLowerBound);
             expect(output.tempo).to.be.lessThanOrEqual(defaults.tempoHigherBound);
         });
 
-        it('should return a key from the preferred keys list', () => {
+        it('should return a key from the default keys list', () => {
             expect(output.key).to.be.oneOf(constants.notes);
         });
 
-        it('should return a time signature from the list', () => {
+        it('should return a time signature from the default list', () => {
             expect(output.signature).to.be.oneOf(constants.signatures);
         });
 

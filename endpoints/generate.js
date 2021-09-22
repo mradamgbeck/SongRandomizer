@@ -29,7 +29,8 @@ function generateSong(inputs) {
         inputs.maxAmountOfParts || defaults.maxAmountOfParts
     );
 
-    if(typeof inputs.usePopularStructure === 'undefined') inputs.usePopularStructure = true
+    if (typeof inputs.usePopularStructure === 'undefined')
+        inputs.usePopularStructure = defaults.usePopularStructure
     const songStructure = inputs.usePopularStructure
         ? pickOne(constants.structures)
         : randomizeSongStructure(
