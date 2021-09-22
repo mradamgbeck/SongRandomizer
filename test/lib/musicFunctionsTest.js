@@ -30,11 +30,11 @@ describe('music functions:', () => {
 
             expect(uniqueParts.length).to.be.equal(numberOfParts);
             expect(numberOfPartA).to.be.greaterThanOrEqual(minRepeats)
-            expect(numberOfPartA).to.be.lessThanOrEqual(maxRepeats)
+                .and.lessThanOrEqual(maxRepeats)
             expect(numberOfPartB).to.be.greaterThanOrEqual(minRepeats)
-            expect(numberOfPartB).to.be.lessThanOrEqual(maxRepeats)
+                .and.lessThanOrEqual(maxRepeats)
             expect(numberOfPartC).to.be.greaterThanOrEqual(minRepeats)
-            expect(numberOfPartC).to.be.lessThanOrEqual(maxRepeats)
+                .and.lessThanOrEqual(maxRepeats)
         });
     });
 });

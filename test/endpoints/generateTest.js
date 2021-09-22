@@ -35,20 +35,22 @@ describe('generate function:', () => {
         });
 
         it('should return a number of instruments within the bounds', () => {
-            expect(output.numberOfInstruments).to.be.greaterThanOrEqual(input.amountOfInstrumentsLower);
-            expect(output.numberOfInstruments).to.be.lessThanOrEqual(input.amountOfInstrumentsHigher);
+            expect(output.numberOfInstruments)
+                .to.be.greaterThanOrEqual(input.amountOfInstrumentsLower)
+                .and.lessThanOrEqual(input.amountOfInstrumentsHigher);
         });
 
         it('should return a tempo within the bounds', () => {
-            expect(output.tempo).to.be.greaterThanOrEqual(input.tempoLowerBound);
-            expect(output.tempo).to.be.lessThanOrEqual(input.tempoHigherBound);
+            expect(output.tempo)
+                .to.be.greaterThanOrEqual(input.tempoLowerBound)
+                .and.lessThanOrEqual(input.tempoHigherBound);
         });
 
         it('should return a key from the preferred keys list', () => {
             expect(output.key).to.be.oneOf(input.preferredKeys);
         });
 
-        it('should return a scale', ()=>{
+        it('should return a scale', () => {
             expect(output.scale.notes.length).to.be.greaterThan(4)
         })
 
@@ -57,15 +59,17 @@ describe('generate function:', () => {
         });
 
         it('should pick a number of dynamics within bounds', () => {
-            expect(output.dynamics.length).to.be.greaterThanOrEqual(input.amountOfDynamicsLower);
-            expect(output.dynamics.length).to.be.lessThanOrEqual(input.amountOfDynamicsHigher);
+            expect(output.dynamics.length)
+                .to.be.greaterThanOrEqual(input.amountOfDynamicsLower)
+                .and.lessThanOrEqual(input.amountOfDynamicsHigher);
         });
 
         it('should generate a structure whose parts repeat within bound', () => {
             let occurrences = countOccurrences(output.structure);
             for (let repeats of occurrences[1]) {
-                expect(repeats).to.be.greaterThanOrEqual(input.partRepeatLowerBound);
-                expect(repeats).to.be.lessThanOrEqual(input.partRepeatHigherBound);
+                expect(repeats)
+                    .to.be.greaterThanOrEqual(input.partRepeatLowerBound)
+                    .and.lessThanOrEqual(input.partRepeatHigherBound);
             }
         });
     });
@@ -77,13 +81,15 @@ describe('generate function:', () => {
         })
 
         it('should return a number of instruments within the defaults', () => {
-            expect(output.numberOfInstruments).to.be.greaterThanOrEqual(defaults.amountOfInstrumentsLower);
-            expect(output.numberOfInstruments).to.be.lessThanOrEqual(defaults.amountOfInstrumentsHigher);
+            expect(output.numberOfInstruments)
+                .to.be.greaterThanOrEqual(defaults.amountOfInstrumentsLower)
+                .and.lessThanOrEqual(defaults.amountOfInstrumentsHigher);
         });
 
         it('should return a tempo within the defaults', () => {
-            expect(output.tempo).to.be.greaterThanOrEqual(defaults.tempoLowerBound);
-            expect(output.tempo).to.be.lessThanOrEqual(defaults.tempoHigherBound);
+            expect(output.tempo)
+                .to.be.greaterThanOrEqual(defaults.tempoLowerBound)
+                .and.lessThanOrEqual(defaults.tempoHigherBound);
         });
 
         it('should return a key from the default keys list', () => {
@@ -95,8 +101,9 @@ describe('generate function:', () => {
         });
 
         it('should pick a number of dynamics within bounds', () => {
-            expect(output.dynamics.length).to.be.greaterThanOrEqual(defaults.amountOfDynamicsLower);
-            expect(output.dynamics.length).to.be.lessThanOrEqual(defaults.amountOfDynamicsHigher);
+            expect(output.dynamics.length)
+                .to.be.greaterThanOrEqual(defaults.amountOfDynamicsLower)
+                .and.lessThanOrEqual(defaults.amountOfDynamicsHigher);
         });
 
         it('should pick a popular song structure', () => {
