@@ -1,6 +1,8 @@
 const expect = require('chai').expect;
 const {generateSong} = require("../endpoints/generate");
-const constants = require('../lib/constants.json');
+const signatures = require('../constants/signatures.json')
+const structures = require('../constants/structures.json')
+const notes = require('../constants/notes.json')
 const defaults = require('../config/generateDefaults.js')
 const {countOccurrences} = require('../lib/randomFunctions');
 let output;
@@ -47,7 +49,7 @@ describe('generate function', () => {
         });
 
         it('should return a time signature from the list', () => {
-            expect(output.signature).to.be.oneOf(constants.signatures);
+            expect(output.signature).to.be.oneOf(signatures);
         });
 
         it('should pick a number of dynamics within bounds', () => {
@@ -81,11 +83,11 @@ describe('generate function', () => {
         });
 
         it('should return a key from the default keys list', () => {
-            expect(output.key).to.be.oneOf(constants.notes);
+            expect(output.key).to.be.oneOf(notes);
         });
 
         it('should return a time signature from the default list', () => {
-            expect(output.signature).to.be.oneOf(constants.signatures);
+            expect(output.signature).to.be.oneOf(signatures);
         });
 
         it('should pick a number of dynamics within bounds', () => {
@@ -94,7 +96,7 @@ describe('generate function', () => {
         });
 
         it('should pick a popular song structure', () => {
-            expect(constants.structures).to.include(output.structure)
+            expect(structures).to.include(output.structure)
         });
     });
 });
