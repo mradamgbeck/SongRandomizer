@@ -47,7 +47,18 @@ describe('random functions:', () => {
             let remainingIndexes = 2;
             let startIndex = array.length - remainingIndexes;
             let output = getIndexWithWrap(array, startIndex, interval);
-            expect(output).to.equal(array[interval - remainingIndexes])
+            let expectedIndex = interval - remainingIndexes;
+            let expectedOutput = array[expectedIndex];
+            expect(expectedOutput).to.equal(output)
+        });
+
+        it('should return a non-wrapped element', () => {
+            let interval = 2;
+            let remainingIndexes = 5;
+            let startIndex = array.length - remainingIndexes;
+            let output = getIndexWithWrap(array, startIndex, interval);
+            let expectedOutput = array[startIndex + interval];
+            expect(expectedOutput).to.equal(output)
         });
     });
 });
