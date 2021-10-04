@@ -175,5 +175,7 @@ curl --location --request POST 'http://localhost:3000/generate' \
 - Add more dynamics
 - find some way to programatically know when to use sharps or flats (currently all sharps)
 - Make chord degrees correct for each scale (lowercase numeral for minor, uppercase for major, and degree mark for diminished chords)
+- Output relative key and related keys (for borrowing chords)
+- Output links to pictures of chords?
 - Devise a system for knowing the names of created chords
 - Compose an actual song using the template
