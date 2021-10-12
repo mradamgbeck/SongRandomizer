@@ -5,25 +5,25 @@ SongRandomizer is a node express app that starts on port 3000
 
 ### POST `http://localhost:3000/generate`
 #### INPUT 
-- `tempoLowerBound`
+- `minimumTempo`
   - The minimum bpm the generated tempo can be
-- `tempoHigherBound`
+- `maximumTempo`
   - The maximum bpm the generated tempo can be
 - `minAmountOfParts`
   - The minimum amount of parts in the song structure
 - `maxAmountOfParts`
   - The maximum amount of parts in the song structure
-- `partRepeatLowerBound`
+- `minimumPartRepeats`
   - The minimum amount of times a part will appear in the song structure
-- `partRepeatHigherBound`
+- `maximumPartRepeats`
   - The maximum amount of times a part will appear in the song structure
-- `amountOfDynamicsLower`
+- `minimumAmountOfDynamics`
   - The minimum number of dynamic features the generator will choose randomly
-- `amountOfDynamicsHigher`
+- `maximumAmountOfDynamics`
   - The maximum number of dynamic features the generator will choose randomly
-- `amountOfInstrumentsLower`
+- `minimumAmountOfInstruments`
   - The minimum amount of suggested voices
-- `amountOfInstrumentsHigher`
+- `maximumAmountOfInstruments`
   - The maximum amount of suggested voices
 - `usePopularStructure`
   - Whether or not the generator chooses the structure from a list of popular song structures
@@ -33,16 +33,16 @@ SongRandomizer is a node express app that starts on port 3000
 #### JSON EXAMPLE
 ```json
 {
-	"tempoLowerBound": 90,
-	"tempoHigherBound": 150,
+	"minimumTempo": 90,
+	"maximumTempo": 150,
 	"minAmountOfParts": 2,
 	"maxAmountOfParts": 4,
-	"partRepeatLowerBound": 1,
-	"partRepeatHigherBound": 3,
-	"amountOfDynamicsLower": 2,
-	"amountOfDynamicsHigher": 6,
-	"amountOfInstrumentsLower": 1,
-	"amountOfInstrumentsHigher": 6,
+	"minimumPartRepeats": 1,
+	"maximumPartRepeats": 3,
+	"minimumAmountOfDynamics": 2,
+	"maximumAmountOfDynamics": 6,
+	"minimumAmountOfInstruments": 1,
+	"maximumAmountOfInstruments": 6,
 	"usePopularStructure": false,
 	"preferredKeys": [
 		"A",
@@ -57,16 +57,16 @@ SongRandomizer is a node express app that starts on port 3000
 curl --location --request POST 'http://localhost:3000/generate' \
 --header 'Content-Type: application/json' \
 --data-raw '{
-	"tempoLowerBound": 90,
-	"tempoHigherBound": 150,
+	"minimumTempo": 90,
+	"maximumTempo": 150,
 	"minAmountOfParts": 2,
 	"maxAmountOfParts": 4,
-	"partRepeatLowerBound": 1,
-	"partRepeatHigherBound": 3,
-	"amountOfDynamicsLower": 2,
-	"amountOfDynamicsHigher": 6,
-	"amountOfInstrumentsLower": 1,
-	"amountOfInstrumentsHigher": 6,
+	"minimumPartRepeats": 1,
+	"maximumPartRepeats": 3,
+	"minimumAmountOfDynamics": 2,
+	"maximumAmountOfDynamics": 6,
+	"minimumAmountOfInstruments": 1,
+	"maximumAmountOfInstruments": 6,
 	"usePopularStructure": false,
 	"preferredKeys": [
 		"A",
@@ -154,16 +154,16 @@ curl --location --request POST 'http://localhost:3000/generate' \
 -If nothing is set, these are the following default settings:
 ```json
 {
-    "tempoLowerBound": 1,
-    "tempoHigherBound": 999,
+    "minimumTempo": 1,
+    "maximumTempo": 999,
     "minAmountOfParts": 1,
     "maxAmountOfParts": 26,
-    "partRepeatLowerBound": 1,
-    "partRepeatHigherBound": 10,
-    "amountOfDynamicsLower": 1,
-    "amountOfDynamicsHigher": dynamics.length,
-    "amountOfInstrumentsLower": 1,
-    "amountOfInstrumentsHigher": 999,
+    "minimumPartRepeats": 1,
+    "maximumPartRepeats": 10,
+    "minimumAmountOfDynamics": 1,
+    "maximumAmountOfDynamics": dynamics.length,
+    "minimumAmountOfInstruments": 1,
+    "maximumAmountOfInstruments": 999,
     "usePopularStructure": true,
     "preferredKeys": ["A","A#","B","C","C#","D","D#","E","F","F#","G","G#"]
 }

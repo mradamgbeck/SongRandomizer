@@ -11,16 +11,16 @@ describe('generate function:', () => {
 
     describe('with inputs', () => {
         let input = {
-            "tempoLowerBound": 90,
-            "tempoHigherBound": 150,
+            "minimumTempo": 90,
+            "maximumTempo": 150,
             "minAmountOfParts": 2,
             "maxAmountOfParts": 4,
-            "partRepeatLowerBound": 1,
-            "partRepeatHigherBound": 3,
-            "amountOfDynamicsLower": 2,
-            "amountOfDynamicsHigher": 6,
-            "amountOfInstrumentsLower": 1,
-            "amountOfInstrumentsHigher": 6,
+            "minimumPartRepeats": 1,
+            "maximumPartRepeats": 3,
+            "minimumAmountOfDynamics": 2,
+            "maximumAmountOfDynamics": 6,
+            "minimumAmountOfInstruments": 1,
+            "maximumAmountOfInstruments": 6,
             "usePopularStructure": false,
             "preferredKeys": [
                 "A",
@@ -36,14 +36,14 @@ describe('generate function:', () => {
 
         it('should return a number of instruments within the bounds', () => {
             expect(output.numberOfInstruments)
-                .to.be.greaterThanOrEqual(input.amountOfInstrumentsLower)
-                .and.lessThanOrEqual(input.amountOfInstrumentsHigher);
+                .to.be.greaterThanOrEqual(input.minimumAmountOfInstruments)
+                .and.lessThanOrEqual(input.maximumAmountOfInstruments);
         });
 
         it('should return a tempo within the bounds', () => {
             expect(output.tempo)
-                .to.be.greaterThanOrEqual(input.tempoLowerBound)
-                .and.lessThanOrEqual(input.tempoHigherBound);
+                .to.be.greaterThanOrEqual(input.minimumTempo)
+                .and.lessThanOrEqual(input.maximumTempo);
         });
 
         it('should return a key from the preferred keys list', () => {
@@ -60,16 +60,16 @@ describe('generate function:', () => {
 
         it('should pick a number of dynamics within bounds', () => {
             expect(output.dynamics.length)
-                .to.be.greaterThanOrEqual(input.amountOfDynamicsLower)
-                .and.lessThanOrEqual(input.amountOfDynamicsHigher);
+                .to.be.greaterThanOrEqual(input.minimumAmountOfDynamics)
+                .and.lessThanOrEqual(input.maximumAmountOfDynamics);
         });
 
         it('should generate a structure whose parts repeat within bound', () => {
             let occurrences = countOccurrences(output.structure);
             for (let repeats of occurrences[1]) {
                 expect(repeats)
-                    .to.be.greaterThanOrEqual(input.partRepeatLowerBound)
-                    .and.lessThanOrEqual(input.partRepeatHigherBound);
+                    .to.be.greaterThanOrEqual(input.minimumPartRepeats)
+                    .and.lessThanOrEqual(input.maximumPartRepeats);
             }
         });
     });
@@ -82,14 +82,14 @@ describe('generate function:', () => {
 
         it('should return a number of instruments within the defaults', () => {
             expect(output.numberOfInstruments)
-                .to.be.greaterThanOrEqual(defaults.amountOfInstrumentsLower)
-                .and.lessThanOrEqual(defaults.amountOfInstrumentsHigher);
+                .to.be.greaterThanOrEqual(defaults.minimumAmountOfInstruments)
+                .and.lessThanOrEqual(defaults.maximumAmountOfInstruments);
         });
 
         it('should return a tempo within the defaults', () => {
             expect(output.tempo)
-                .to.be.greaterThanOrEqual(defaults.tempoLowerBound)
-                .and.lessThanOrEqual(defaults.tempoHigherBound);
+                .to.be.greaterThanOrEqual(defaults.minimumTempo)
+                .and.lessThanOrEqual(defaults.maximumTempo);
         });
 
         it('should return a key from the default keys list', () => {
@@ -102,8 +102,8 @@ describe('generate function:', () => {
 
         it('should pick a number of dynamics within bounds', () => {
             expect(output.dynamics.length)
-                .to.be.greaterThanOrEqual(defaults.amountOfDynamicsLower)
-                .and.lessThanOrEqual(defaults.amountOfDynamicsHigher);
+                .to.be.greaterThanOrEqual(defaults.minimumAmountOfDynamics)
+                .and.lessThanOrEqual(defaults.maximumAmountOfDynamics);
         });
 
         it('should pick a popular song structure', () => {
