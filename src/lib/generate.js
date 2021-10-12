@@ -1,29 +1,29 @@
-const dynamics = require('../constants/dynamics.json')
-const signatures = require('../constants/signatures.json')
-const structures = require('../constants/structures.json')
-const notes = require('../constants/notes.json')
-const scales = require('../constants/scales.json')
+const dynamics = require('../constants/dynamics')
+const signatures = require('../constants/signatures')
+const structures = require('../constants/structures')
+const notes = require('../constants/notes')
+const scales = require('../constants/scales')
 const defaults = require('../config/generateDefaults')
 
 const {
     randomNumberInRange,
     pickOne,
     pickSome,
-} = require('../lib/randomFunctions');
-const {randomizeSongStructure, getScaleForKey, getChordsForScale} = require('../lib/musicFunctions')
+    choosePreferred
+} = require('./randomFunctions');
+const {randomizeSongStructure, getScaleForKey, getChordsForScale} = require('./musicFunctions')
 
 function generateSong(inputs) {
 
     const tempo = randomNumberInRange(
-        inputs.tempoLowerBound || defaults.tempoLowerBound,
-        inputs.tempoHigherBound || defaults.tempoHigherBound
+        inputs.minimumTempo || defaults.minimumTempo,
+        inputs.maximumTempo || defaults.maximumTempo
     );
 
-    const signature = pickOne(signatures);
+    const availableSignatures = choosePreferred(inputs.preferredSignatures, signatures);
+    const signature = pickOne(availableSignatures);
 
-    const availableKeys = inputs.preferredKeys && inputs.preferredKeys.length > 0
-        ? notes.filter(key => inputs.preferredKeys.includes(key))
-        : notes;
+    const availableKeys = choosePreferred(inputs.preferredKeys, notes);
     const key = pickOne(availableKeys);
 
     const scale = getScaleForKey(key, pickOne(scales));
@@ -39,19 +39,19 @@ function generateSong(inputs) {
         ? pickOne(structures)
         : randomizeSongStructure(
             numberOfParts,
-            inputs.partRepeatLowerBound || defaults.partRepeatLowerBound,
-            inputs.partRepeatHigherBound || defaults.partRepeatHigherBound
+            inputs.minimumPartRepeats || defaults.minimumPartRepeats,
+            inputs.maximumPartRepeats || defaults.maximumPartRepeats
         );
 
     const numberOfDynamics = randomNumberInRange(
-        inputs.amountOfDynamicsLower || defaults.amountOfDynamicsLower,
-        inputs.amountOfDynamicsHigher || defaults.amountOfDynamicsHigher
+        inputs.minimumAmountOfDynamics || defaults.minimumAmountOfDynamics,
+        inputs.maximumAmountOfDynamics || defaults.maximumAmountOfDynamics
     );
     const selectedDynamics = pickSome(dynamics, numberOfDynamics);
 
     const numberOfInstruments = randomNumberInRange(
-        inputs.amountOfInstrumentsLower || defaults.amountOfInstrumentsLower,
-        inputs.amountOfInstrumentsHigher || defaults.amountOfInstrumentsHigher
+        inputs.minimumAmountOfInstruments || defaults.minimumAmountOfInstruments,
+        inputs.maximumAmountOfInstruments || defaults.maximumAmountOfInstruments
     );
 
     const chords = getChordsForScale(scale.notes);

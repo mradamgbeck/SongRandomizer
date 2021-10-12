@@ -1,5 +1,5 @@
 const express = require('express');
-const {generateSong} = require('./endpoints/generate')
+const {generateSong} = require('./src/lib/generate')
 const app = express();
 app.use(express.json());
 

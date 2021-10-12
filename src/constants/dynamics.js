@@ -1,4 +1,4 @@
-[
+module.exports = [
   "DOUBLE TIME",
   "HALF TIME",
   "KEY CHANGE",

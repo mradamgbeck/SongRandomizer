@@ -1,6 +1,6 @@
-const alphabet = require("../constants/alphabet.json");
-const notes = require('../constants/notes.json')
-const numerals = require('../constants/numerals.json')
+const alphabet = require("../constants/alphabet");
+const notes = require('../constants/notes')
+const numerals = require('../constants/numerals')
 const {randomNumberInRange, shuffleArray, getIndexWithWrap} = require("./randomFunctions");
 
 function randomizeSongStructure(numberOfParts, minRepeats, maxRepeats) {
