@@ -27,3 +27,4 @@ node_modules/
 npm-debug.log
 song-randomizer/package-lock.json
 test/*.log
+package-lock.json
