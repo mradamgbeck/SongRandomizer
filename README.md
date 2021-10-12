@@ -1,81 +1,7 @@
 # SongRandomizer
 A tool for making a random song format for which to inspire you with.
 ## Use
-SongRandomizer is a node express app that starts on port 3000
-
-### POST `http://localhost:3000/generate`
-#### INPUT 
-- `minimumTempo`
-  - The minimum bpm the generated tempo can be
-- `maximumTempo`
-  - The maximum bpm the generated tempo can be
-- `minAmountOfParts`
-  - The minimum amount of parts in the song structure
-- `maxAmountOfParts`
-  - The maximum amount of parts in the song structure
-- `minimumPartRepeats`
-  - The minimum amount of times a part will appear in the song structure
-- `maximumPartRepeats`
-  - The maximum amount of times a part will appear in the song structure
-- `minimumAmountOfDynamics`
-  - The minimum number of dynamic features the generator will choose randomly
-- `maximumAmountOfDynamics`
-  - The maximum number of dynamic features the generator will choose randomly
-- `minimumAmountOfInstruments`
-  - The minimum amount of suggested voices
-- `maximumAmountOfInstruments`
-  - The maximum amount of suggested voices
-- `usePopularStructure`
-  - Whether or not the generator chooses the structure from a list of popular song structures
-- `preferredKeys`
-  - A list of the keys for the generator to limit itself to
-
-#### JSON EXAMPLE
-```json
-{
-	"minimumTempo": 90,
-	"maximumTempo": 150,
-	"minAmountOfParts": 2,
-	"maxAmountOfParts": 4,
-	"minimumPartRepeats": 1,
-	"maximumPartRepeats": 3,
-	"minimumAmountOfDynamics": 2,
-	"maximumAmountOfDynamics": 6,
-	"minimumAmountOfInstruments": 1,
-	"maximumAmountOfInstruments": 6,
-	"usePopularStructure": false,
-	"preferredKeys": [
-		"A",
-		"C",
-		"E",
-		"F#"
-	]
-}
-```
-#### CURL COMMAND
-```bash
-curl --location --request POST 'http://localhost:3000/generate' \
---header 'Content-Type: application/json' \
---data-raw '{
-	"minimumTempo": 90,
-	"maximumTempo": 150,
-	"minAmountOfParts": 2,
-	"maxAmountOfParts": 4,
-	"minimumPartRepeats": 1,
-	"maximumPartRepeats": 3,
-	"minimumAmountOfDynamics": 2,
-	"maximumAmountOfDynamics": 6,
-	"minimumAmountOfInstruments": 1,
-	"maximumAmountOfInstruments": 6,
-	"usePopularStructure": false,
-	"preferredKeys": [
-		"A",
-		"C",
-		"E",
-		"F#"
-	]
-}'
-```
+SongRandomizer is a Vue app that starts on port 8081
 
 #### OUTPUT
 ```json
@@ -171,7 +97,6 @@ curl --location --request POST 'http://localhost:3000/generate' \
 ## To Do:
 - Make song structure start with `A` and each new part be named appropriately i.e. `AABACBAD` instead of `BBABDABD`
 - Add ability to prefer a list of scales
-- Add ability to prefer a list of time signatures
 - find some way to programatically know when to use sharps or flats (currently all sharps)
 - Make chord degrees correct for each scale (lowercase numeral for minor, uppercase for major, and degree mark for diminished chords)
 - Output relative key and related keys (for borrowing chords)
