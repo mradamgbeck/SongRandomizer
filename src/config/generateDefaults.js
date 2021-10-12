@@ -1,5 +1,5 @@
-const dynamics = require('../constants/dynamics.json')
-const alphabet = require('../constants/alphabet.json')
+const dynamics = require('../constants/dynamics')
+const alphabet = require('../constants/alphabet')
 
 module.exports = {
     minimumTempo: 1,

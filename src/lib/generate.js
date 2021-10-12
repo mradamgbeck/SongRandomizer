@@ -1,8 +1,8 @@
-const dynamics = require('../constants/dynamics.json')
-const signatures = require('../constants/signatures.json')
-const structures = require('../constants/structures.json')
-const notes = require('../constants/notes.json')
-const scales = require('../constants/scales.json')
+const dynamics = require('../constants/dynamics')
+const signatures = require('../constants/signatures')
+const structures = require('../constants/structures')
+const notes = require('../constants/notes')
+const scales = require('../constants/scales')
 const defaults = require('../config/generateDefaults')
 
 const {

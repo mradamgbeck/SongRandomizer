@@ -1,9 +1,9 @@
 const expect = require('chai').expect;
 const {generateSong} = require("../../src/lib/generate");
-const signatures = require('../../src/constants/signatures.json')
-const structures = require('../../src/constants/structures.json')
-const notes = require('../../src/constants/notes.json')
-const defaults = require('../../src/config/generateDefaults.js')
+const signatures = require('../../src/constants/signatures')
+const structures = require('../../src/constants/structures')
+const notes = require('../../src/constants/notes')
+const defaults = require('../../src/config/generateDefaults')
 const {countOccurrences} = require('../../src/lib/randomFunctions');
 let output;
 

@@ -1,3 +1,4 @@
+
 function pickOne(array) {
     return array[randomNumberInRange(0, array.length - 1)]
 }
