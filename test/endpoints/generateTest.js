@@ -27,6 +27,10 @@ describe('generate function:', () => {
                 "C",
                 "E",
                 "F#"
+            ],
+            "preferredSignatures": [
+                "3/4",
+                "4/4"
             ]
         }
 
@@ -48,6 +52,10 @@ describe('generate function:', () => {
 
         it('should return a key from the preferred keys list', () => {
             expect(output.key).to.be.oneOf(input.preferredKeys);
+        });
+
+        it('should return a key from the preferred keys list', () => {
+            expect(output.signature).to.be.oneOf(input.preferredSignatures);
         });
 
         it('should return a scale', () => {

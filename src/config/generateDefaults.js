@@ -13,5 +13,7 @@ module.exports = {
     minimumAmountOfInstruments: 1,
     maximumAmountOfInstruments: 999,
     usePopularStructure: true,
-    preferredKeys: []
+    preferredKeys: [],
+    preferredScales: [],
+    preferredSignatures: []
 }

@@ -1,4 +1,3 @@
-
 function pickOne(array) {
     return array[randomNumberInRange(0, array.length - 1)]
 }
@@ -15,6 +14,12 @@ function pickSome(array, amount) {
         }
     }
     return result;
+}
+
+function choosePreferred(preferred, wholeSet) {
+    return preferred && preferred.length > 0
+        ? wholeSet.filter(item => preferred.includes(item))
+        : wholeSet;
 }
 
 function randomNumberInRange(min, max) {
@@ -67,5 +72,6 @@ module.exports = {
     pickSome: pickSome,
     countOccurrences: countOccurrences,
     shuffleArray: shuffleArray,
-    getIndexWithWrap: getIndexWithWrap
+    getIndexWithWrap: getIndexWithWrap,
+    choosePreferred: choosePreferred
 }

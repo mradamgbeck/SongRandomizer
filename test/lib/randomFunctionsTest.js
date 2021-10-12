@@ -4,7 +4,8 @@ const {
     pickSome,
     randomNumberInRange,
     shuffleArray,
-    getIndexWithWrap
+    getIndexWithWrap,
+    choosePreferred
 } = require('../../src/lib/randomFunctions');
 
 describe('random functions:', () => {
@@ -38,6 +39,19 @@ describe('random functions:', () => {
         it('should return a shuffled array', () => {
             let output = shuffleArray(array);
             expect(output).to.not.deep.equal(array)
+        });
+    });
+
+    describe('choosePreferred', () => {
+        it('should return just the matching preferred items', () => {
+            const preferred = [array[0], array[2], array[4]]
+            let output = choosePreferred(preferred, array);
+            expect(output).to.not.deep.equal(array)
+            expect(output.length).to.equal(preferred.length)
+            output.map(item => {
+                expect(array).to.include(item)
+                expect(preferred).to.include(item)
+            })
         });
     });
 

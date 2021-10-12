@@ -9,6 +9,7 @@ const {
     randomNumberInRange,
     pickOne,
     pickSome,
+    choosePreferred
 } = require('./randomFunctions');
 const {randomizeSongStructure, getScaleForKey, getChordsForScale} = require('./musicFunctions')
 
@@ -19,11 +20,10 @@ function generateSong(inputs) {
         inputs.maximumTempo || defaults.maximumTempo
     );
 
-    const signature = pickOne(signatures);
+    const availableSignatures = choosePreferred(inputs.preferredSignatures, signatures);
+    const signature = pickOne(availableSignatures);
 
-    const availableKeys = inputs.preferredKeys && inputs.preferredKeys.length > 0
-        ? notes.filter(key => inputs.preferredKeys.includes(key))
-        : notes;
+    const availableKeys = choosePreferred(inputs.preferredKeys, notes);
     const key = pickOne(availableKeys);
 
     const scale = getScaleForKey(key, pickOne(scales));
