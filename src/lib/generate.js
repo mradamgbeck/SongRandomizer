@@ -9,8 +9,8 @@ const {
     randomNumberInRange,
     pickOne,
     pickSome,
-} = require('../lib/randomFunctions');
-const {randomizeSongStructure, getScaleForKey, getChordsForScale} = require('../lib/musicFunctions')
+} = require('./randomFunctions');
+const {randomizeSongStructure, getScaleForKey, getChordsForScale} = require('./musicFunctions')
 
 function generateSong(inputs) {
 

@@ -1,10 +1,10 @@
 const expect = require('chai').expect;
-const {generateSong} = require("../../endpoints/generate");
-const signatures = require('../../constants/signatures.json')
-const structures = require('../../constants/structures.json')
-const notes = require('../../constants/notes.json')
-const defaults = require('../../config/generateDefaults.js')
-const {countOccurrences} = require('../../lib/randomFunctions');
+const {generateSong} = require("../../src/lib/generate");
+const signatures = require('../../src/constants/signatures.json')
+const structures = require('../../src/constants/structures.json')
+const notes = require('../../src/constants/notes.json')
+const defaults = require('../../src/config/generateDefaults.js')
+const {countOccurrences} = require('../../src/lib/randomFunctions');
 let output;
 
 describe('generate function:', () => {

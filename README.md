@@ -172,15 +172,14 @@ curl --location --request POST 'http://localhost:3000/generate' \
 - Make song structure start with `A` and each new part be named appropriately i.e. `AABACBAD` instead of `BBABDABD`
 - Add ability to prefer a list of scales
 - Add ability to prefer a list of time signatures
-- Add more dynamics
 - find some way to programatically know when to use sharps or flats (currently all sharps)
 - Make chord degrees correct for each scale (lowercase numeral for minor, uppercase for major, and degree mark for diminished chords)
 - Output relative key and related keys (for borrowing chords)
-- Output links to pictures of chords?
+- Output chord diagrams
+- Output scale diagrams
 - Devise a system for knowing the names of created chords
-- Compose an actual song using the template
 
-# song-randomizer
+# song-randomizer Vue Commands
 
 ## Project setup
 ```
