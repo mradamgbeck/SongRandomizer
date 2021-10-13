@@ -41,9 +41,9 @@
     </select><br>
 
     <input id="usePopStructure" v-model="inputs.usePopularStructure" type="checkbox">
-    <label for="usePopStructure">Use Popular Song Structure</label><br>
+    <label for="usePopStructure">Use Popular Song Structure</label><br><br>
 
-    <Button id="submit" @click="generate">Randomize</Button>
+    <Button id="submit" @click="generate">Randomize</Button><br>
   </div>
 </template>
 
