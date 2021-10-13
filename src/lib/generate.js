@@ -9,7 +9,8 @@ const {
     randomNumberInRange,
     pickOne,
     pickSome,
-    choosePreferred
+    choosePreferred,
+    limitMaximum
 } = require('./randomFunctions');
 const {randomizeSongStructure, getScaleForKey, getChordsForScale} = require('./musicFunctions')
 
@@ -43,9 +44,10 @@ function generateSong(inputs) {
             inputs.maximumPartRepeats || defaults.maximumPartRepeats
         );
 
+
     const numberOfDynamics = randomNumberInRange(
         inputs.minimumAmountOfDynamics || defaults.minimumAmountOfDynamics,
-        inputs.maximumAmountOfDynamics || defaults.maximumAmountOfDynamics
+        limitMaximum(inputs.maximumAmountOfDynamics, dynamics) || defaults.maximumAmountOfDynamics
     );
     const selectedDynamics = pickSome(dynamics, numberOfDynamics);
 

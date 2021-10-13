@@ -66,6 +66,12 @@ function getIndexWithWrap(array, startIndex, interval) {
     return array[nextIndex]
 }
 
+function limitMaximum(amount, array) {
+    return amount >= array.length
+        ? array.length
+        : amount
+}
+
 module.exports = {
     randomNumberInRange: randomNumberInRange,
     pickOne: pickOne,
@@ -73,5 +79,6 @@ module.exports = {
     countOccurrences: countOccurrences,
     shuffleArray: shuffleArray,
     getIndexWithWrap: getIndexWithWrap,
-    choosePreferred: choosePreferred
+    choosePreferred: choosePreferred,
+    limitMaximum: limitMaximum
 }
