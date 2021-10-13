@@ -1,82 +1,13 @@
 # SongRandomizer
 A tool for making a random song format for which to inspire you with.
 ## Use
-SongRandomizer is a Vue app that starts on port 8081
+SongRandomizer is a Vue app that starts on port 8080 by default
+### Build
+`npm run build`
+### Serve
+`npm run serve`
 
-#### OUTPUT
-```json
-{
-  "tempo": 95,
-  "signature": "7/4",
-  "key": "C#",
-  "scale": {
-    "name": "HUNGARIAN MINOR",
-    "notes": [
-      "C#",
-      "D#",
-      "E",
-      "G",
-      "G#",
-      "A",
-      "C"
-    ]
-  },
-  "chords": {
-    "i": [
-      "C#",
-      "E",
-      "G#"
-    ],
-    "ii": [
-      "D#",
-      "G",
-      "A"
-    ],
-    "iii": [
-      "E",
-      "G#",
-      "C"
-    ],
-    "iv": [
-      "G",
-      "A",
-      "C#"
-    ],
-    "v": [
-      "G#",
-      "C",
-      "D#"
-    ],
-    "vi": [
-      "A",
-      "C#",
-      "E"
-    ],
-    "vii": [
-      "C",
-      "D#",
-      "G"
-    ]
-  },
-  "numberOfInstruments": 6,
-  "dynamics": [
-    "BUILD UP",
-    "ARPEGGIO",
-    "POLY RHYTHM",
-    "FADE OUT",
-    "POLY METER",
-    "BASS DROP"
-  ],
-  "structure": [
-    "B",
-    "A",
-    "A",
-    "A"
-  ]
-}
-```
-
-#### DEFAULTS
+## DEFAULTS
 -If nothing is set, these are the following default settings:
 ```json
 {
@@ -103,28 +34,3 @@ SongRandomizer is a Vue app that starts on port 8081
 - Output chord diagrams
 - Output scale diagrams
 - Devise a system for knowing the names of created chords
-
-# song-randomizer Vue Commands
-
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
