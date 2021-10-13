@@ -1,3 +1,4 @@
+const alphabet = require('../constants/alphabet')
 const dynamics = require('../constants/dynamics')
 const signatures = require('../constants/signatures')
 const structures = require('../constants/structures')
@@ -31,7 +32,7 @@ function generateSong(inputs) {
 
     const numberOfParts = randomNumberInRange(
         inputs.minAmountOfParts || defaults.minAmountOfParts,
-        inputs.maxAmountOfParts || defaults.maxAmountOfParts
+        limitMaximum(inputs.maxAmountOfParts, alphabet) || defaults.maxAmountOfParts
     );
 
     if (typeof inputs.usePopularStructure === 'undefined')
