@@ -58,7 +58,7 @@ function generateSong(inputs) {
 
     const chords = getChordsForScale(scale.notes);
 
-    const result = {
+    return {
         tempo: tempo,
         signature: signature,
         key: key,
@@ -67,13 +67,7 @@ function generateSong(inputs) {
         numberOfInstruments: numberOfInstruments,
         dynamics: selectedDynamics,
         structure: songStructure
-    }
-
-    console.log('INPUT --------------------------------------------');
-    console.log(inputs);
-    console.log('OUTPUT -------------------------------------------');
-    console.log(result);
-    return result;
+    };
 }
 
 module.exports = {generateSong}

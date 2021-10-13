@@ -62,6 +62,7 @@ export default {
       signatures: signatures
     }
   },
+  emits: ['songOutput'],
   methods: {
     generate() {
       this.$emit('songOutput', generateSong(this.inputs))
