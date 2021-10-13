@@ -1,7 +1,11 @@
 # SongRandomizer
 A tool for making a random song format for which to inspire you with.
 ## Use
-SongRandomizer is a Vue app that starts on port 8081
+SongRandomizer is a Vue app that starts on port 8080 by default
+### Build
+`npm run build`
+### Serve
+`npm run serve`
 
 #### OUTPUT
 ```json
