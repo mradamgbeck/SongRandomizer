@@ -35,3 +35,4 @@ SongRandomizer is a Vue app that starts on port 8080 by default
 - Output chord diagrams
 - Output scale diagrams
 - Devise a system for knowing the names of created chords
+- Add structure to each dynamic with links to tutorials
