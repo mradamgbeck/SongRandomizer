@@ -4,7 +4,7 @@ const signatures = require('../constants/signatures')
 const structures = require('../constants/structures')
 const notes = require('../constants/notes')
 const scales = require('../constants/scales')
-const defaults = require('../config/generateDefaults')
+const defaults = require('../config/generate-defaults')
 
 const {
     randomNumberInRange,
@@ -12,8 +12,8 @@ const {
     pickSome,
     choosePreferred,
     limitMaximum
-} = require('./randomFunctions');
-const {randomizeSongStructure, getScaleForKey, getChordsForScale} = require('./musicFunctions')
+} = require('./random-functions');
+const {randomizeSongStructure, getScaleForKey, getChordsForScale} = require('./music-functions')
 
 function generateSong(inputs) {
 

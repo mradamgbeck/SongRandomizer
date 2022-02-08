@@ -6,7 +6,7 @@ const {
     shuffleArray,
     getIndexWithWrap,
     choosePreferred
-} = require('../../src/lib/randomFunctions');
+} = require('../../src/lib/random-functions');
 
 describe('random functions:', () => {
     let array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];

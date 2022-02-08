@@ -48,7 +48,7 @@
 </template>
 
 <script>
-import defaults from "../config/generateDefaults";
+import defaults from "../config/generate-defaults";
 import notes from "../constants/notes"
 import signatures from "../constants/signatures"
 import {generateSong} from "../lib/generate";

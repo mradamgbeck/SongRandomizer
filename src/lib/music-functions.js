@@ -1,7 +1,7 @@
 const alphabet = require("../constants/alphabet");
 const notes = require('../constants/notes')
 const numerals = require('../constants/numerals')
-const {randomNumberInRange, shuffleArray, getIndexWithWrap} = require("./randomFunctions");
+const {randomNumberInRange, shuffleArray, getIndexWithWrap} = require("./random-functions");
 
 function randomizeSongStructure(numberOfParts, minRepeats, maxRepeats) {
     let structure = []

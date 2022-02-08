@@ -1,41 +1,50 @@
 {
   "name": "song-randomizer",
+  "version": "0.1.0",
   "author": "Adam Beck",
   "license": "ISC",
+  "private": true,
   "description": "A tool to randomly generate a song format using basic music theory",
-  "version": "0.1.0",
   "keywords": [
     "song",
     "randomizer",
     "music",
     "theory"
   ],
-  "private": true,
   "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "dependencies": {
+    "@testing-library/jest-dom": "^5.16.2",
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/user-event": "^13.5.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "^3.0.1",
+    "web-vitals": "^2.1.4"
   },
   "devDependencies": {
-    "chai": "^4.3.4",
-    "mocha": "9.1.1"
+    "chai": "^4.3.4"
   },
   "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
     "extends": [
-      "plugin:vue/vue3-essential",
-      "eslint:recommended"
-    ],
-    "parserOptions": {
-      "parser": "babel-eslint"
-    },
-    "rules": {}
+      "react-app",
+      "react-app/jest"
+    ]
   },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not dead"
-  ]
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }

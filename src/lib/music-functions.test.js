@@ -1,6 +1,6 @@
 const expect = require('chai').expect;
-const {getScaleForKey, randomizeSongStructure, getChordsForScale} = require('../../src/lib/musicFunctions');
-const {countOccurrences, getIndexWithWrap} = require('../../src/lib/randomFunctions');
+const {getScaleForKey, randomizeSongStructure, getChordsForScale} = require('../../src/lib/music-functions');
+const {countOccurrences, getIndexWithWrap} = require('../../src/lib/random-functions');
 
 describe('music functions:', () => {
     describe('get scale for key', () => {
