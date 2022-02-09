@@ -72,13 +72,13 @@ function limitMaximum(amount, array) {
         : amount
 }
 
-module.exports = {
-    randomNumberInRange: randomNumberInRange,
-    pickOne: pickOne,
-    pickSome: pickSome,
-    countOccurrences: countOccurrences,
-    shuffleArray: shuffleArray,
-    getIndexWithWrap: getIndexWithWrap,
-    choosePreferred: choosePreferred,
-    limitMaximum: limitMaximum
+export {
+    randomNumberInRange,
+    pickOne,
+    pickSome,
+    countOccurrences,
+    shuffleArray,
+    getIndexWithWrap,
+    choosePreferred,
+    limitMaximum
 }

@@ -1,7 +1,7 @@
-const dynamics = require('../constants/dynamics')
-const alphabet = require('../constants/alphabet')
+import alphabet from '../constants/alphabet'
+import dynamics from '../constants/dynamics'
 
-module.exports = {
+export default {
     minimumTempo: 1,
     maximumTempo: 999,
     minAmountOfParts: 1,
