@@ -21,7 +21,7 @@ export default class App extends React.Component {
             <div>
                 <h1>SONG RANDO TIME</h1>
                 <InputForm setSongData={this.setSongData}/>
-                <SongDisplay songdata={songData}/>
+                <SongDisplay songData={songData}/>
             </div>
         );
     }
