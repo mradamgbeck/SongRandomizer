@@ -1,7 +1,7 @@
-const alphabet = require("../constants/alphabet");
-const notes = require('../constants/notes')
-const numerals = require('../constants/numerals')
-const {randomNumberInRange, shuffleArray, getIndexWithWrap} = require("./randomFunctions");
+import alphabet from '../constants/alphabet'
+import notes from '../constants/notes'
+import numerals from '../constants/numerals'
+import {randomNumberInRange, shuffleArray, getIndexWithWrap} from './random-functions';
 
 function randomizeSongStructure(numberOfParts, minRepeats, maxRepeats) {
     let structure = []
@@ -47,8 +47,8 @@ function getChordsForScale(notes) {
     return chords;
 }
 
-module.exports = {
-    randomizeSongStructure: randomizeSongStructure,
-    getScaleForKey: getScaleForKey,
-    getChordsForScale: getChordsForScale
+export {
+    randomizeSongStructure,
+    getScaleForKey,
+    getChordsForScale
 }

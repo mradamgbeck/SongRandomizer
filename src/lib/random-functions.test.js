@@ -1,12 +1,12 @@
-const expect = require('chai').expect;
-const {
+import {expect} from 'chai'
+import {
     pickOne,
     pickSome,
     randomNumberInRange,
     shuffleArray,
     getIndexWithWrap,
     choosePreferred
-} = require('../../src/lib/randomFunctions');
+} from './random-functions'
 
 describe('random functions:', () => {
     let array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];

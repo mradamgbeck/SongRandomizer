@@ -1,22 +1,24 @@
-const alphabet = require('../constants/alphabet')
-const dynamics = require('../constants/dynamics')
-const signatures = require('../constants/signatures')
-const structures = require('../constants/structures')
-const notes = require('../constants/notes')
-const scales = require('../constants/scales')
-const defaults = require('../config/generateDefaults')
-
-const {
+import alphabet from '../constants/alphabet'
+import dynamics from '../constants/dynamics'
+import signatures from '../constants/signatures'
+import structures from '../constants/structures'
+import notes from '../constants/notes'
+import scales from '../constants/scales'
+import defaults from '../config/generate-defaults'
+import {
     randomNumberInRange,
     pickOne,
     pickSome,
     choosePreferred,
     limitMaximum
-} = require('./randomFunctions');
-const {randomizeSongStructure, getScaleForKey, getChordsForScale} = require('./musicFunctions')
+} from './random-functions';
+import {
+    randomizeSongStructure,
+    getScaleForKey,
+    getChordsForScale
+} from './music-functions'
 
-function generateSong(inputs) {
-
+export default function generateSong(inputs) {
     const tempo = randomNumberInRange(
         inputs.minimumTempo || defaults.minimumTempo,
         inputs.maximumTempo || defaults.maximumTempo
@@ -70,5 +72,3 @@ function generateSong(inputs) {
         structure: songStructure
     };
 }
-
-module.exports = {generateSong}

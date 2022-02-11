@@ -1,12 +1,11 @@
-const expect = require('chai').expect;
-const {getScaleForKey, randomizeSongStructure, getChordsForScale} = require('../../src/lib/musicFunctions');
-const {countOccurrences, getIndexWithWrap} = require('../../src/lib/randomFunctions');
+import {expect} from 'chai';
+import {getScaleForKey, randomizeSongStructure, getChordsForScale} from './music-functions'
+import {countOccurrences, getIndexWithWrap} from './random-functions'
 
 describe('music functions:', () => {
     describe('get scale for key', () => {
         const scale = {
-            name: "TEST SCALE",
-            interval: [1, 2, 1, 2, 1, 2, 1]
+            name: "TEST SCALE", interval: [1, 2, 1, 2, 1, 2, 1]
         }
         const expectedNotes = ['C', 'C#', 'D#', 'E', 'F#', 'G', 'A', 'A#'];
         it('should return the correct scale', () => {
@@ -50,8 +49,7 @@ describe('music functions:', () => {
                     expect(scale).to.include(thisNote);
                     if (i < triad.length - 1) {
                         let nextNote = triad[i + 1];
-                        let expectedNextNote = scale[scale.indexOf(
-                            getIndexWithWrap(scale, scale.indexOf(thisNote), 2))];
+                        let expectedNextNote = scale[scale.indexOf(getIndexWithWrap(scale, scale.indexOf(thisNote), 2))];
                         expect(nextNote).to.be.equal(expectedNextNote)
                     }
                 }

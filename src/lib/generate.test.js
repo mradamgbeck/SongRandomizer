@@ -1,10 +1,11 @@
-const expect = require('chai').expect;
-const {generateSong} = require("../../src/lib/generate");
-const signatures = require('../../src/constants/signatures')
-const structures = require('../../src/constants/structures')
-const notes = require('../../src/constants/notes')
-const defaults = require('../../src/config/generateDefaults')
-const {countOccurrences} = require('../../src/lib/randomFunctions');
+import generateSong from './generate';
+import signatures from '../constants/signatures'
+import structures from '../constants/structures'
+import notes from '../constants/notes'
+import defaults from '../config/generate-defaults'
+import {countOccurrences} from './random-functions'
+import {expect} from 'chai';
+
 let output;
 
 describe('generate function:', () => {
@@ -34,7 +35,7 @@ describe('generate function:', () => {
             ]
         }
 
-        beforeEach('setup', () => {
+        beforeEach(() => {
             output = generateSong(input);
         });
 
@@ -84,7 +85,7 @@ describe('generate function:', () => {
 
     describe('with defaults', () => {
 
-        beforeEach('setup', () => {
+        beforeEach(() => {
             output = generateSong({});
         })
 
