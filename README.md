@@ -27,6 +27,10 @@ SongRandomizer is a Vue app that starts on port 8080 by default
 }
 ```
 ## To Do:
+- Make it pretty with Material UI or similar theming
+- Add Component for preferred Keys 
+- Add Component for preferred Scales 
+- Add Component for preferred Time Signatures 
 - Make song structure start with `A` and each new part be named appropriately i.e. `AABACBAD` instead of `BBABDABD`
 - Add ability to prefer a list of scales
 - find some way to programatically know when to use sharps or flats (currently all sharps)
