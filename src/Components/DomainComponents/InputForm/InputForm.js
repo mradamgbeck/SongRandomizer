@@ -16,7 +16,6 @@ class InputForm extends React.Component {
     }
 
     updateInputParameters(value, parameter) {
-        console.log(value)
         this.setState(prevState => {
                 let newState = {
                     inputParameters: {
