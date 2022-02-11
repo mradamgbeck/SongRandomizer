@@ -2,6 +2,7 @@ import React from 'react';
 import generateSong from '../../../lib/generate'
 import {Button, TextField} from "@material-ui/core";
 import defaults from "../../../config/generate-defaults";
+import Checkbox from "../../FormComponents/Checkbox";
 
 class InputForm extends React.Component {
     constructor(props) {
@@ -10,19 +11,34 @@ class InputForm extends React.Component {
             inputParameters: defaults
         };
         this.updateSongData = this.updateSongData.bind(this);
+        this.updateInputParameters = this.updateInputParameters.bind(this);
 
     }
 
+    updateInputParameters(e, parameter) {
+        this.setState(prevState => {
+                let newState = {
+                    inputParameters: {
+                        ...prevState.inputParameters,
+                    }
+                };
+                newState.inputParameters[parameter] = e.target.value
+                return newState;
+            }
+        )
+    }
+
     updateSongData() {
+        let generatedSong = generateSong(this.state.inputParameters);
         this.props.setSongData(
-            generateSong(this.state.inputParameters)
+            generatedSong
         )
     }
 
     render() {
         return (
             <div>
-                <h2>INPUT DUDE</h2>
+                <h2>Song Input Parameters</h2>
                 <TextField
                     id="outlined-number"
                     label="Minimum tempo"
@@ -32,7 +48,7 @@ class InputForm extends React.Component {
                     }}
                     defaultValue={defaults.minimumTempo}
                     onChange={(e) => {
-                        this.setState({inputParameters: {minimumTempo: e.target.value}})
+                        this.updateInputParameters(e, 'minimumTempo')
                     }}
                 />
                 <br/>
@@ -45,7 +61,7 @@ class InputForm extends React.Component {
                     }}
                     defaultValue={defaults.maximumTempo}
                     onChange={(e) => {
-                        this.setState({inputParameters: {maximumTempo: e.target.value}})
+                        this.updateInputParameters(e, 'maximumTempo')
                     }}
                 />
                 <br/>
@@ -58,7 +74,7 @@ class InputForm extends React.Component {
                     }}
                     defaultValue={defaults.minAmountOfParts}
                     onChange={(e) => {
-                        this.setState({inputParameters: {minAmountOfParts: e.target.value}})
+                        this.updateInputParameters(e, 'minAmountOfParts')
                     }}
                 />
                 <br/>
@@ -71,7 +87,7 @@ class InputForm extends React.Component {
                     }}
                     defaultValue={defaults.maxAmountOfParts}
                     onChange={(e) => {
-                        this.setState({inputParameters: {maxAmountOfParts: e.target.value}})
+                        this.updateInputParameters(e, 'maxAmountOfParts')
                     }}
                 />
                 <br/>
@@ -84,7 +100,7 @@ class InputForm extends React.Component {
                     }}
                     defaultValue={defaults.minimumPartRepeats}
                     onChange={(e) => {
-                        this.setState({inputParameters: {minimumPartRepeats: e.target.value}})
+                        this.updateInputParameters(e, 'minimumPartRepeats')
                     }}
                 />
                 <br/>
@@ -97,7 +113,7 @@ class InputForm extends React.Component {
                     }}
                     defaultValue={defaults.maximumPartRepeats}
                     onChange={(e) => {
-                        this.setState({inputParameters: {maximumPartRepeats: e.target.value}})
+                        this.updateInputParameters(e, 'maximumPartRepeats')
                     }}
                 />
                 <br/>
@@ -110,7 +126,7 @@ class InputForm extends React.Component {
                     }}
                     defaultValue={defaults.minimumAmountOfDynamics}
                     onChange={(e) => {
-                        this.setState({inputParameters: {minimumAmountOfDynamics: e.target.value}})
+                        this.updateInputParameters(e, 'minimumAmountOfDynamics')
                     }}
                 />
                 <br/>
@@ -123,7 +139,7 @@ class InputForm extends React.Component {
                     }}
                     defaultValue={defaults.maximumAmountOfDynamics}
                     onChange={(e) => {
-                        this.setState({inputParameters: {maximumAmountOfDynamics: e.target.value}})
+                        this.updateInputParameters(e, 'maximumAmountOfDynamics')
                     }}
                 />
                 <br/>
@@ -136,7 +152,7 @@ class InputForm extends React.Component {
                     }}
                     defaultValue={defaults.minimumAmountOfInstruments}
                     onChange={(e) => {
-                        this.setState({inputParameters: {minimumAmountOfInstruments: e.target.value}})
+                        this.updateInputParameters(e, 'minimumAmountOfInstruments')
                     }}
                 />
                 <br/>
@@ -149,8 +165,14 @@ class InputForm extends React.Component {
                     }}
                     defaultValue={defaults.maximumAmountOfInstruments}
                     onChange={(e) => {
-                        this.setState({inputParameters: {maximumAmountOfInstruments: e.target.value}})
+                        this.updateInputParameters(e, 'maximumAmountOfInstruments')
                     }}
+                />
+                <br/>
+                <Checkbox
+                    label="Popular song structure"
+                    value={defaults.usePopularStructure}
+                    onChange={(e)=>{this.updateInputParameters(e, 'usePopularStructure')}}
                 />
                 <br/>
                 <Button variant="contained" onClick={this.updateSongData}>Generate Song</Button>

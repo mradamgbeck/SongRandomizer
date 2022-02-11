@@ -19,7 +19,6 @@ import {
 } from './music-functions'
 
 export default function generateSong(inputs) {
-
     const tempo = randomNumberInRange(
         inputs.minimumTempo || defaults.minimumTempo,
         inputs.maximumTempo || defaults.maximumTempo

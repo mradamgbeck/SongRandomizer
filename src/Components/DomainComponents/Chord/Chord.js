@@ -6,7 +6,7 @@ class Chord extends React.Component {
     render() {
         return (
             <div>
-                <p>{this.props.chord.degree}:{commaSeparateList(this.props.chord.triad)}</p>
+                {this.props.chord.degree}:{commaSeparateList(this.props.chord.triad)}
             </div>
         );
     }

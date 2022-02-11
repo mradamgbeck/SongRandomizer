@@ -19,7 +19,7 @@ export default class App extends React.Component {
         const songData = this.state.songData;
         return (
             <div>
-                <h1>SONG RANDO TIME</h1>
+                <h1>Song Randomizer</h1>
                 <InputForm setSongData={this.setSongData}/>
                 <SongDisplay songData={songData}/>
             </div>

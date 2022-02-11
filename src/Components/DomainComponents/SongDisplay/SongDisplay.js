@@ -4,10 +4,9 @@ import {commaSeparateList} from "../../../lib/rendering-functions";
 class SongDisplay extends React.Component {
 
     render() {
-        console.table(this.props.songData)
         return (
             <div>
-                <h2>OUTPUT DUDE</h2>
+                <h2>Generated Song Template</h2>
                 <h3>Tempo</h3>
                 <p>{this.props.songData.tempo}</p>
                 <h3>Time Signature</h3>
