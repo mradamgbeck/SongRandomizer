@@ -2,7 +2,7 @@ import React from 'react';
 import generateSong from '../../../lib/generate'
 import {Button, TextField} from "@material-ui/core";
 import defaults from "../../../config/generate-defaults";
-import Checkbox from "../../FormComponents/Checkbox";
+import Checkbox from "../../FormComponents/Checkbox/Checkbox";
 
 class InputForm extends React.Component {
     constructor(props) {
@@ -15,14 +15,15 @@ class InputForm extends React.Component {
 
     }
 
-    updateInputParameters(e, parameter) {
+    updateInputParameters(value, parameter) {
+        console.log(value)
         this.setState(prevState => {
                 let newState = {
                     inputParameters: {
                         ...prevState.inputParameters,
                     }
                 };
-                newState.inputParameters[parameter] = e.target.value
+                newState.inputParameters[parameter] = value
                 return newState;
             }
         )
@@ -48,7 +49,7 @@ class InputForm extends React.Component {
                     }}
                     defaultValue={defaults.minimumTempo}
                     onChange={(e) => {
-                        this.updateInputParameters(e, 'minimumTempo')
+                        this.updateInputParameters(e.target.value, 'minimumTempo')
                     }}
                 />
                 <br/>
@@ -61,7 +62,7 @@ class InputForm extends React.Component {
                     }}
                     defaultValue={defaults.maximumTempo}
                     onChange={(e) => {
-                        this.updateInputParameters(e, 'maximumTempo')
+                        this.updateInputParameters(e.target.value, 'maximumTempo')
                     }}
                 />
                 <br/>
@@ -74,7 +75,7 @@ class InputForm extends React.Component {
                     }}
                     defaultValue={defaults.minAmountOfParts}
                     onChange={(e) => {
-                        this.updateInputParameters(e, 'minAmountOfParts')
+                        this.updateInputParameters(e.target.value, 'minAmountOfParts')
                     }}
                 />
                 <br/>
@@ -87,7 +88,7 @@ class InputForm extends React.Component {
                     }}
                     defaultValue={defaults.maxAmountOfParts}
                     onChange={(e) => {
-                        this.updateInputParameters(e, 'maxAmountOfParts')
+                        this.updateInputParameters(e.target.value, 'maxAmountOfParts')
                     }}
                 />
                 <br/>
@@ -100,7 +101,7 @@ class InputForm extends React.Component {
                     }}
                     defaultValue={defaults.minimumPartRepeats}
                     onChange={(e) => {
-                        this.updateInputParameters(e, 'minimumPartRepeats')
+                        this.updateInputParameters(e.target.value, 'minimumPartRepeats')
                     }}
                 />
                 <br/>
@@ -113,7 +114,7 @@ class InputForm extends React.Component {
                     }}
                     defaultValue={defaults.maximumPartRepeats}
                     onChange={(e) => {
-                        this.updateInputParameters(e, 'maximumPartRepeats')
+                        this.updateInputParameters(e.target.value, 'maximumPartRepeats')
                     }}
                 />
                 <br/>
@@ -126,7 +127,7 @@ class InputForm extends React.Component {
                     }}
                     defaultValue={defaults.minimumAmountOfDynamics}
                     onChange={(e) => {
-                        this.updateInputParameters(e, 'minimumAmountOfDynamics')
+                        this.updateInputParameters(e.target.value, 'minimumAmountOfDynamics')
                     }}
                 />
                 <br/>
@@ -139,7 +140,7 @@ class InputForm extends React.Component {
                     }}
                     defaultValue={defaults.maximumAmountOfDynamics}
                     onChange={(e) => {
-                        this.updateInputParameters(e, 'maximumAmountOfDynamics')
+                        this.updateInputParameters(e.target.value, 'maximumAmountOfDynamics')
                     }}
                 />
                 <br/>
@@ -152,7 +153,7 @@ class InputForm extends React.Component {
                     }}
                     defaultValue={defaults.minimumAmountOfInstruments}
                     onChange={(e) => {
-                        this.updateInputParameters(e, 'minimumAmountOfInstruments')
+                        this.updateInputParameters(e.target.value, 'minimumAmountOfInstruments')
                     }}
                 />
                 <br/>
@@ -165,14 +166,15 @@ class InputForm extends React.Component {
                     }}
                     defaultValue={defaults.maximumAmountOfInstruments}
                     onChange={(e) => {
-                        this.updateInputParameters(e, 'maximumAmountOfInstruments')
+                        this.updateInputParameters(e.target.value, 'maximumAmountOfInstruments')
                     }}
                 />
                 <br/>
                 <Checkbox
                     label="Popular song structure"
-                    value={defaults.usePopularStructure}
-                    onChange={(e)=>{this.updateInputParameters(e, 'usePopularStructure')}}
+                    default={defaults.usePopularStructure}
+                    onChange={this.updateInputParameters}
+                    parameter={'usePopularStructure'}
                 />
                 <br/>
                 <Button variant="contained" onClick={this.updateSongData}>Generate Song</Button>
