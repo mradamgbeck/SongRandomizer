@@ -22,9 +22,11 @@ export default class App extends React.Component {
         const songData = this.state.songData;
         return (
             <div className={'invisible-containment-div'}>
-                <h1 className={'containment-div'}>Song Randomizer</h1>
-                <p><a href={'https://github.com/mradamgbeck/SongRandomizer'}>Github</a></p>
-                    <InputForm setSongData={this.setSongData}/>
+                <div className={'containment-div'}>
+                    <h1>Song Randomizer</h1>
+                    <p><a href={'https://github.com/mradamgbeck/SongRandomizer'}>Github</a></p>
+                </div>
+                <InputForm setSongData={this.setSongData}/>
                 {songHasGenerated ? <SongDisplay songData={songData}/> : null}
             </div>
         );
