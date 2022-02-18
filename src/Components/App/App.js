@@ -1,6 +1,7 @@
 import React from 'react';
 import SongDisplay from '../DomainComponents/SongDisplay/SongDisplay'
 import InputForm from "../DomainComponents/InputForm/InputForm";
+import "../../styles.css";
 
 export default class App extends React.Component {
     constructor(props) {
@@ -11,17 +12,19 @@ export default class App extends React.Component {
 
     setSongData(songData) {
         this.setState({
-            songData: songData
+            songData: songData,
+            songHasGenerated: true
         });
     }
 
     render() {
+        const songHasGenerated = this.state.songHasGenerated;
         const songData = this.state.songData;
         return (
-            <div>
-                <h1>Song Randomizer</h1>
-                <InputForm setSongData={this.setSongData}/>
-                <SongDisplay songData={songData}/>
+            <div className={'invisible-containment-div'}>
+                <h1 className={'containment-div'}>Song Randomizer</h1>
+                    <InputForm setSongData={this.setSongData}/>
+                {songHasGenerated ? <SongDisplay songData={songData}/> : null}
             </div>
         );
     }

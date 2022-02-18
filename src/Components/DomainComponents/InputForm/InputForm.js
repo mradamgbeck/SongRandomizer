@@ -1,8 +1,8 @@
 import React from 'react';
 import generateSong from '../../../lib/generate'
-import {Button, TextField} from "@material-ui/core";
 import defaults from "../../../config/generate-defaults";
 import Checkbox from "../../FormComponents/Checkbox/Checkbox";
+import '../../../styles.css'
 
 class InputForm extends React.Component {
     constructor(props) {
@@ -37,146 +37,141 @@ class InputForm extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className={'containment-div'}>
                 <h2>Song Input Parameters</h2>
-                <TextField
-                    id="outlined-number"
-                    label="Minimum tempo"
-                    type="number"
-                    InputLabelProps={{
-                        shrink: true,
-                    }}
-                    defaultValue={defaults.minimumTempo}
-                    onChange={(e) => {
-                        this.updateInputParameters(e.target.value, 'minimumTempo')
-                    }}
-                />
-                <br/>
-                <TextField
-                    id="outlined-number"
-                    label="Maximum tempo"
-                    type="number"
-                    InputLabelProps={{
-                        shrink: true,
-                    }}
-                    defaultValue={defaults.maximumTempo}
-                    onChange={(e) => {
-                        this.updateInputParameters(e.target.value, 'maximumTempo')
-                    }}
-                />
-                <br/>
-                <TextField
-                    id="outlined-number"
-                    label="Minimum song parts"
-                    type="number"
-                    InputLabelProps={{
-                        shrink: true,
-                    }}
-                    defaultValue={defaults.minAmountOfParts}
-                    onChange={(e) => {
-                        this.updateInputParameters(e.target.value, 'minAmountOfParts')
-                    }}
-                />
-                <br/>
-                <TextField
-                    id="outlined-number"
-                    label="Maximum song parts"
-                    type="number"
-                    InputLabelProps={{
-                        shrink: true,
-                    }}
-                    defaultValue={defaults.maxAmountOfParts}
-                    onChange={(e) => {
-                        this.updateInputParameters(e.target.value, 'maxAmountOfParts')
-                    }}
-                />
-                <br/>
-                <TextField
-                    id="outlined-number"
-                    label="Minimum song part occurrences"
-                    type="number"
-                    InputLabelProps={{
-                        shrink: true,
-                    }}
-                    defaultValue={defaults.minimumPartRepeats}
-                    onChange={(e) => {
-                        this.updateInputParameters(e.target.value, 'minimumPartRepeats')
-                    }}
-                />
-                <br/>
-                <TextField
-                    id="outlined-number"
-                    label="Maximum song part occurrences"
-                    type="number"
-                    InputLabelProps={{
-                        shrink: true,
-                    }}
-                    defaultValue={defaults.maximumPartRepeats}
-                    onChange={(e) => {
-                        this.updateInputParameters(e.target.value, 'maximumPartRepeats')
-                    }}
-                />
-                <br/>
-                <TextField
-                    id="outlined-number"
-                    label="Minimum amount of dynamics"
-                    type="number"
-                    InputLabelProps={{
-                        shrink: true,
-                    }}
-                    defaultValue={defaults.minimumAmountOfDynamics}
-                    onChange={(e) => {
-                        this.updateInputParameters(e.target.value, 'minimumAmountOfDynamics')
-                    }}
-                />
-                <br/>
-                <TextField
-                    id="outlined-number"
-                    label="Maximum amount of dynamics"
-                    type="number"
-                    InputLabelProps={{
-                        shrink: true,
-                    }}
-                    defaultValue={defaults.maximumAmountOfDynamics}
-                    onChange={(e) => {
-                        this.updateInputParameters(e.target.value, 'maximumAmountOfDynamics')
-                    }}
-                />
-                <br/>
-                <TextField
-                    id="outlined-number"
-                    label="Minimum amount of instruments"
-                    type="number"
-                    InputLabelProps={{
-                        shrink: true,
-                    }}
-                    defaultValue={defaults.minimumAmountOfInstruments}
-                    onChange={(e) => {
-                        this.updateInputParameters(e.target.value, 'minimumAmountOfInstruments')
-                    }}
-                />
-                <br/>
-                <TextField
-                    id="outlined-number"
-                    label="Maximum amount of instruments"
-                    type="number"
-                    InputLabelProps={{
-                        shrink: true,
-                    }}
-                    defaultValue={defaults.maximumAmountOfInstruments}
-                    onChange={(e) => {
-                        this.updateInputParameters(e.target.value, 'maximumAmountOfInstruments')
-                    }}
-                />
-                <br/>
-                <Checkbox
-                    label="Popular song structure"
-                    default={defaults.usePopularStructure}
-                    onChange={this.updateInputParameters}
-                    parameter={'usePopularStructure'}
-                />
-                <br/>
-                <Button variant="contained" onClick={this.updateSongData}>Generate Song</Button>
+                <div className={'info-section-div'}>
+                    <h3>Tempo</h3>
+                    <label className={'input-label'}>
+                        Minimum Tempo:
+                        <input
+                            className={'input-number'}
+                            type="number"
+                            defaultValue={defaults.minimumTempo}
+                            onChange={(e) => {
+                                this.updateInputParameters(e.target.value, 'minimumTempo')
+                            }}
+                        /></label>
+
+                    <label className={'input-label'}>
+                        Maximum tempo:
+                        <input
+                            className={'input-number'}
+                            type="number"
+                            defaultValue={defaults.maximumTempo}
+                            onChange={(e) => {
+                                this.updateInputParameters(e.target.value, 'maximumTempo')
+                            }}
+                        />
+                    </label>
+                </div>
+
+                <div className={'info-section-div'}>
+                    <h3>Song Parts</h3>
+                <label className={'input-label'}>
+                    Minimum song parts:
+                    <input
+                        className={'input-number'}
+                        type="number"
+                        defaultValue={defaults.minAmountOfParts}
+                        onChange={(e) => {
+                            this.updateInputParameters(e.target.value, 'minAmountOfParts')
+                        }}
+                    />
+                </label>
+                <label className={'input-label'}>
+                    Maximum song parts:
+                    <input
+                        className={'input-number'}
+                        type="number"
+                        defaultValue={defaults.maxAmountOfParts}
+                        onChange={(e) => {
+                            this.updateInputParameters(e.target.value, 'maxAmountOfParts')
+                        }}
+                    />
+                </label>
+                <label className={'input-label'}>
+                    Minimum song part occurrences:
+                    <input
+                        className={'input-number'}
+                        type="number"
+                        defaultValue={defaults.minimumPartRepeats}
+                        onChange={(e) => {
+                            this.updateInputParameters(e.target.value, 'minimumPartRepeats')
+                        }}
+                    />
+                </label>
+                <label className={'input-label'}>
+                    Maximum song part occurrences:
+                    <input
+                        className={'input-number'}
+                        type="number"
+                        defaultValue={defaults.maximumPartRepeats}
+                        onChange={(e) => {
+                            this.updateInputParameters(e.target.value, 'maximumPartRepeats')
+                        }}
+                    />
+                </label>
+                    <Checkbox
+                        label="Use popular song structure: "
+                        default={defaults.usePopularStructure}
+                        onChange={this.updateInputParameters}
+                        parameter={'usePopularStructure'}
+                    />
+                </div>
+
+                <div className={'info-section-div'}>
+                    <h3>Dynamics</h3>
+                <label className={'input-label'}>
+                    Minimum amount of dynamics:
+                    <input
+                        className={'input-number'}
+                        type="number"
+                        defaultValue={defaults.minimumAmountOfDynamics}
+                        onChange={(e) => {
+                            this.updateInputParameters(e.target.value, 'minimumAmountOfDynamics')
+                        }}
+                    />
+                </label>
+                <label className={'input-label'}>
+                    Maximum amount of dynamics:
+                    <input
+                        className={'input-number'}
+                        type="number"
+                        defaultValue={defaults.maximumAmountOfDynamics}
+                        onChange={(e) => {
+                            this.updateInputParameters(e.target.value, 'maximumAmountOfDynamics')
+                        }}
+                    />
+                </label>
+                </div>
+
+                <div className={'info-section-div'}>
+                    <h3>Instruments</h3>
+                <label className={'input-label'}>
+                    Minimum amount of instruments:
+                    <input
+                        className={'input-number'}
+                        type="number"
+                        defaultValue={defaults.minimumAmountOfInstruments}
+                        onChange={(e) => {
+                            this.updateInputParameters(e.target.value, 'minimumAmountOfInstruments')
+                        }}
+                    />
+                </label>
+                <label className={'input-label'}>
+                    Maximum amount of instruments:
+                    <input
+                        className={'input-number'}
+                        type="number"
+                        defaultValue={defaults.maximumAmountOfInstruments}
+                        onChange={(e) => {
+                            this.updateInputParameters(e.target.value, 'maximumAmountOfInstruments')
+                        }}
+                    />
+                </label>
+                </div>
+
+                <button className={'button'} onClick={this.updateSongData}>Generate Song</button>
             </div>
         );
     }

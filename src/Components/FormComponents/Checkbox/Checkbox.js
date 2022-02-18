@@ -6,14 +6,15 @@ function Checkbox(props) {
 
     return (
         <label>
-            <input type="checkbox"
-                   defaultChecked={props.default}
-                   onChange={() => {
-                       props.onChange(!checked, props.parameter)
-                       setChecked(!checked);
-                   }}
-            />
             {props.label}
+            <input
+                type="checkbox"
+                defaultChecked={props.default}
+                onChange={() => {
+                    props.onChange(!checked, props.parameter)
+                    setChecked(!checked);
+                }}
+            />
         </label>
     );
 }
