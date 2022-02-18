@@ -5,8 +5,10 @@ class Chord extends React.Component {
 
     render() {
         return (
-            <div>
-                {this.props.chord.degree}:{commaSeparateList(this.props.chord.triad)}
+            <div style={{
+                textAlign:'center'
+            }}>
+                <p>{this.props.chord.degree}: {commaSeparateList(this.props.chord.triad)}</p>
             </div>
         );
     }
