@@ -27,15 +27,19 @@ SongRandomizer is a Vue app that starts on port 8080 by default
 }
 ```
 ## To Do:
+### Reconstructing components
 - Add Component for preferred Keys 
 - Add Component for preferred Scales 
 - Add Component for preferred Time Signatures 
-- Make song structure start with `A` and each new part be named appropriately i.e. `AABACBAD` instead of `BBABDABD`
+### Chords
+- Make chord degrees correct for each scale (lowercase numeral for minor, uppercase for major, and degree mark for diminished chords)
+- Output chord diagrams
+- Devise a system for knowing the names of created chords (create chord engine for recognition of intervals)
+### Scales
 - Add ability to prefer a list of scales
 - find some way to programatically know when to use sharps or flats (currently all sharps)
-- Make chord degrees correct for each scale (lowercase numeral for minor, uppercase for major, and degree mark for diminished chords)
-- Output relative key and related keys (for borrowing chords)
-- Output chord diagrams
 - Output scale diagrams
-- Devise a system for knowing the names of created chords
+- Output relative major / minor and related keys (for borrowing chords)
+### Structure
+- Make song structure start with `A` and each new part be named appropriately i.e. `AABACBAD` instead of `BBABDABD`
 - Add structure to each dynamic with links to tutorials
